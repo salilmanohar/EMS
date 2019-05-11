@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+</head>
+
+<body>
+    <div ng-controller="loginCtrl">
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-2">
+                <img alt="Logo" src="public/DHLogo.jpg">
+            </div>
+            <div class="col-lg-5"></div>
+        </div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="app-card" id="loginformholder">
+                <form ng-submit="login()">
+                    <div class="form-group required">
+                        <label class="control-label" for="username">User Name</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Enter User Name" ng-model="username" required>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="control-label" for="password">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                            </span>
+                            <input type="password" class="form-control" placeholder="Enter User Password" ng-model="password" required>
+                        </div>
+                    </div>
+                    <span class="text-danger" ng-if="invalidCredentials">Invalid Credentials!!!</span>
+                    <button type="submit" class="btn btn-primary" style="float:right;">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</body>
+
+</html>

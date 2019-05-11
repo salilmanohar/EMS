@@ -1,0 +1,12 @@
+#loginformholder {
+    padding: 20px;
+    position: absolute;
+    width: 30em;
+    height: auto;
+}
+.app-card {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+    background: #fff;
+    margin-top: 30px;
+    margin-left: 105px;
+}

@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Screen</title>
+    <link rel="stylesheet" href="public/css/screen.css">
+</head>
+
+<body>
+    <div ng-controller="screenCtrl">
+        <h4 style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;">Statistics</h4>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <i class="fa fa-users"></i>
+                            <p>Employees</p>
+                            <p>{{employeeCount}}</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Dark Horse</h1>
+                            <p>Code & Build</p>
+                            <p>We love our job</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <i class="fa fa-user-circle-o"></i>
+                            <p>Admins</p>
+                            <p>{{adminCount}}</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Dark Horse</h1>
+                            <p>Integrate & Maintain</p>
+                            <p>We love our job</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <i class="fa fa-user"></i>
+                            <p>HR's</p>
+                            <p>{{hrCount}}</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Dark Horse</h1>
+                            <p>Organize & Communicate</p>
+                            <p>We love our job</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>
+        Dashboard Page
+    </title>
+    <link rel="stylesheet" href="public/css/dash.css">
+</head>
+
+<body>
+    <div ng-controller="dashCtrl">
+        <div class="top">
+            <div class="top-left">
+                <i class="fa fa-drivers-license"></i> User Details {{employee.length}}
+            </div>
+            <div class="top-right">
+                <div class="inner-addon right-addon">
+                    <span class="glyphicon glyphicon-search"></span>
+                    <input type="text" class="form-control" placeholder="Search..." ng-model="search">
+                </div>
+            </div>
+        </div>
+       
+        <div class="bottom">
+               
+            <div class="main-top-bottom">
+                <p class="main-header-one">Employee Name</p>
+                <p class="main-header-two">Employee Contact</p>
+                <p class="main-header-three">Employee ID</p>
+                <p class="main-header-four">Actions</p>
+            </div>
+            <div class="main-top-bottom1" ng-repeat="x in employee | filter : search">
+                <p class="main-header-one">{{x.fullName}}</p>
+                <p class="main-header-two">{{x.mobileNo}}</p>
+                <p class="main-header-three">{{x.empId}}</p>
+                <p class="main-header-four">
+                    <button type="submit" class="butto" ng-click="view(x)">View</button>
+                    <button type="submit" class="butto" ng-click="edit(x)">Edit</button>
+                    <button type="submit" class="butto" ng-click="delete(x)">Delete</button>
+                </p>
+            </div>
+        </div>
+        <pagination ng-model="currentPage" total-items="employee.length" max-size="maxSize" boundary-links="true">
+        </pagination>
+    </div>
+</body>
+
+</html>

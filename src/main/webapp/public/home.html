@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>
+        Home Page
+    </title>
+    <link rel="stylesheet" type="text/css" href="public/css/home.css">
+</head>
+
+<body>
+    <div ng-controller="homeCtrl">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="left">
+                    <div class="button">
+                        <button type="button" class="btn btn-primary" ng-click="dashboard()">
+                            <span class="glyphicon glyphicon-plus"></span> Add New Employee</button>
+                    </div>
+                    <div class="sidebar">
+                        <a ui-sref="main.home.dashboard">
+                            <span class="glyphicon glyphicon-th-list"></span> Dashboard</a>
+                        <hr/>
+                        <a ui-sref="main.home.reset">
+                            <span class="glyphicon glyphicon-repeat"></span> Reset Password</a>
+                        <hr/>
+                        <a href="#services">
+                            <i class="fa fa-fw fa-wrench"></i> Settings</a>
+                        <hr/>
+                        <a href="#clients">
+                            <i class="fa fa-fw fa-user"></i> Clients</a>
+                        <hr/>
+                        <a href="#contact">
+                            <i class="fa fa-fw fa-envelope"></i> My Inbox</a>
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <div class="mainbar">
+                    <div class="image">
+                        <img src="images/DHLogo.jpg" alt="images">
+                    </div>
+                    <div ui-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

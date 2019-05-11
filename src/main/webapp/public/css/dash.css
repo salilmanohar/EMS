@@ -1,0 +1,94 @@
+        .bottom {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: 35px;
+            border: 2px solid black;
+            border-bottom: none;
+            width: 80%;
+            background-color: #E0E0E0;
+        }
+
+        .main-top-bottom {
+            height: 50px;
+            border: thick;
+            border-bottom: 2px solid black;
+            padding: 15px;
+            background-color:#f44336;
+            color:black;
+        }
+
+        .main-top-bottom1 {
+            height: 50px;
+            border: thick;
+            border-bottom: 2px solid grey;
+            padding: 15px;
+            background-color: #CCFF90;
+        }
+
+        .main-top-bottom1:hover {
+            background-color: rgb(0, 0, 0);
+            color: red;
+        }
+
+        .main-header-one {
+            float: left;
+            width: 25%;
+        }
+
+        .main-header-two {
+            float: left;
+            width: 25%;
+        }
+
+        .main-header-three {
+            float: left;
+            width: 25%;
+        }
+
+        .main-header-four {
+            float: left;
+            width: 25%;
+        }
+
+        .top {
+            display: inline-flex;
+        }
+
+        .top-left {
+            font-size : 16px;
+            box-sizing: border-box;
+            border-radius : 10px;
+            background-color: #80D8FF;
+            padding:6px;
+            width:9em;
+            color: black;
+        }
+
+        .top-right {
+            position: absolute;
+            margin-left:700px;
+        }
+
+        .inner-addon {
+            position: relative;
+            float: right;
+        }
+
+        .inner-addon .glyphicon {
+            position: absolute;
+            padding: 10px;
+            pointer-events: none;
+        }
+
+        .right-addon .glyphicon {
+            right: 0px;
+        }
+
+        .right-addon input {
+            padding-right: 120px;
+        }
+        .butto {
+            color: white;
+            background-color:#00b0ff;
+            border: 2px solid black;
+        }

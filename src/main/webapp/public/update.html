@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <title>
+        Update Page
+    </title>
+    <link rel="stylesheet" type="text/css" href="public/css/employee.css" />
+</head>
+
+<body>
+    <div ng-controller="updateCtrl">
+        <form name="userForm" ng-submit="submit(userForm)" novalidate>
+            <div class="tabs">
+                <div class="tabular">
+                    <i class="fa fa-caret-square-o-left" ng-click="go()" style="font-size:24px;"></i>
+                    <label class="control" for="details">Employee Details</label>
+                </div>
+                <div class="tab-content">
+                    <div id="tab1" class="tab active">
+                        <div class="mandatoryinfo">
+                            <span id=smallcyan>PROFESSIONAL INFORMATION</span>
+                            <span id=float>
+                                <hr />
+                            </span>
+                            <div class="row">
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="fullName">Employee Name</label>
+                                    <br />
+                                    <input type="text" name="fullName" ng-model="emp.fullName" class="form-control" ng-required="true" ng-disabled="enable">
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.fullName.$dirty) && userForm.fullName.$invalid">User name is required.</span>
+                                </div>
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="number">Contact Number</label>
+                                    <br />
+                                    <input type="text" name="mobileNo" ng-model="emp.mobileNo" ng-keypress="filterValue($event)" ng-disabled="enable" class="form-control"
+                                        ng-required="true" />
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.mobileNo.$dirty) && userForm.mobileNo.$invalid">Contact Number is required.</span>
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.mobileNo.$dirty) && userForm.mobileNo.$invalid">Please enter 10 digits only.</span>
+                                </div>
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="joiningdate">Date of Joining</label>
+                                    <br />
+                                    <input type="date" name="date" ng-model="emp.date" class="form-control" ng-disabled="enable" ng-required="true" />
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.date.$dirty) && userForm.date.$invalid">Date Of Joining is required.</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="emailId">Email ID</label>
+                                    <br />
+                                    <input type="email" name="emailId" ng-model="emp.emailId" class="form-control" ng-disabled="enable" ng-required="true" />
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.emailId.$dirty) && userForm.emailId.$invalid">Email Id is required.</span>
+                                </div>
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="designation">Designation</label>
+                                    <br />
+                                    <input type="text" name="designation" ng-model="emp.designation" class="form-control" ng-disabled="enable" ng-required="true"
+                                    />
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.designation.$dirty) && userForm.designation.$invalid">Designation is required.</span>
+
+                                </div>
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="empId">Employee ID</label>
+                                    <br />
+                                    <input type="text" name="empId" ng-model="emp.empId" class="form-control" ng-disabled="enable" ng-required="true" />
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.empId.$dirty) && userForm.empId.$invalid">Employee Id is required.</span>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="bloodGroup">Blood Group</label>
+                                    <br />
+                                    <select class="form-control" name="bloodGroup" ng-model="emp.bloodGroup" ng-disabled="enable" ng-required="true">
+                                        <option value="" disabled>Select an option</option>
+                                        <option value="A_POSITIVE">A+</option>
+                                        <option value="B_POSITIVE">B+</option>
+                                        <option value="O_POSITIVE">O+</option>
+                                    </select>
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.bloodGroup.$dirty) && userForm.bloodGroup.$invalid">Blood Group is required.</span>
+                                </div>
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="username">User Name</label>
+                                    <br />
+                                    <input type="text" name="userName" ng-model="emp.userName" class="form-control" ng-disabled="enable" ng-required="true" />
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.userName.$dirty) && userForm.userName.$invalid">User Name is required.</span>
+                                </div>
+                                <div class="form-group required col-sm-4">
+                                    <label>User Role :
+                                        <input type="checkbox" ng-model="checkboxModel.value1" ng-disabled="enable"> Admin
+                                        <input type="checkbox" ng-model="checkboxModel.value2" ng-true-value="'YES'" ng-false-value="'NO'" ng-disabled="enable"> HR
+                                    </label>
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.role.$dirty) && userForm.role.$invalid">Please enter a valid user role.</span>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="form-group required">
+                                <label class="control-label" for="description">Description</label>
+                                <br />
+                                <textarea ng-model="emp.description" name="description" rows="5" cols="153" ng-disabled="enable" ng-required="true"></textarea>
+                                <span class="text-danger" ng-if="(isFormSubmitted || userForm.description.$dirty) && userForm.description.$invalid">Description is required.</span>
+                            </div>
+
+                        </div>
+                        <div class="optionalinfo">
+                            <span id=smallcyan>PERSONAL INFORMATION</span>
+                            <span id=float>
+                                <hr />
+                            </span>
+                            <div class="row">
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="dob">DOB</label>
+                                    <br />
+                                    <input type="date" name="DOB" ng-model="emp.DOB" class="form-control" ng-disabled="enable" ng-required="true" />
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.DOB.$dirty) && userForm.DOB.$invalid">Date Of Birth is required.</span>
+                                </div>
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="age">Age</label>
+                                    <br />
+                                    <input type="number" name="age" ng-model="emp.age" ng-maxlength="3" ng-disabled="enable" class="form-control" ng-required="true"
+                                    />
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.age.$dirty) && userForm.age.$invalid">Age is required.</span>
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.age.$dirty) && userForm.age.$invalid">Please enter valid Age.</span>
+                                </div>
+                                <div class="form-group required col-sm-4">
+                                    <label class="control-label" for="gender">Gender</label>
+                                    <br />
+                                    <select class="form-control" name="gender" ng-model="emp.gender" ng-disabled="enable" ng-required="true">
+                                        <option value="" disabled>Select an option</option>
+                                        <option value="MALE">MALE</option>
+                                        <option value="FEMALE">FEMALE</option>
+                                        <option value="OTHERS">OTHERS</option>
+                                    </select>
+                                    <span class="text-danger" ng-if="(isFormSubmitted || userForm.gender.$dirty) && userForm.gender.$invalid">Gender is required.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer" ng-if="isUpdated">
+                    <i class="fa fa-thumbs-up"></i> Submit only after all details are mentioned!!!
+                <span id=footfloat>
+                    <button type="button" ng-click="edit()">Edit</button>
+                    <button type="submit" ng-click="save(emp)">Save</button>
+                    <button type="button" ng-click="clear(userForm)">Clear</button>>
+                </span>
+            </div>
+        </form>
+</body>
+
+</html>
